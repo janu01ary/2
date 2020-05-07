@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>WORDCOUNT</title>
+        <style>
+            @font-face { font-family: 'NanumBarunGothic'; font-style: normal; font-weight: 400; src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot'); src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype'); } @font-face { font-family: 'NanumBarunGothic'; font-style: normal; font-weight: 700; src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot'); src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf') format('truetype') } @font-face { font-family: 'NanumBarunGothic'; font-style: normal; font-weight: 300; src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot'); src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype'); } .nanumbarungothic * { font-family: 'NanumBarunGothic', sans-serif; }
+            * {
+                text-align: center;
+                font-family: 'NanumBarunGothic';
+            }
+            .div0 {
+                height: 300px;
+                color: white;
+                background-color: #404040;
+            }
+            h1 {
+                line-height: 300px;
+            }
+            .div1 {
+                padding: 50px;
+            }
+            a {
+                color: gray;
+            }
+            #submit {
+                border: 1px solid gray;
+                background-color: white;
+                padding: 7px;
+                border-radius: 7px;
+            }
+            .div2 {
+                padding: 30px;
+            }
+            .empty {
+                height: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="div0">
+            <h1>WORDCOUNT</h1>
+        </div>
+
+        <div class="div1">
+            <p>여기에 입력하시면 글자를 세어 드립니다</p>
+            <a href="{%url 'about'%}">About</a>
+        </div>
+
+        <form action="{%url 'result'%}">
+            <textarea cols="50" rows="15" name="fulltext" required></textarea>
+            <br><br>
+            <div class="div2">
+                <input type="submit" value="Count" id="submit"/>
+            </div>
+        </form>
+        
+        <div class="empty"></div>
+    </body>
+</html>

@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>WORDCOUNT</title>
+        <style>
+            @font-face { font-family: 'NanumBarunGothic'; font-style: normal; font-weight: 400; src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot'); src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype'); } @font-face { font-family: 'NanumBarunGothic'; font-style: normal; font-weight: 700; src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot'); src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf') format('truetype') } @font-face { font-family: 'NanumBarunGothic'; font-style: normal; font-weight: 300; src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot'); src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype'); } .nanumbarungothic * { font-family: 'NanumBarunGothic', sans-serif; }
+            * {
+                text-align: center;
+                font-family: 'NanumBarunGothic';
+            }
+            .div0 {
+                height: 300px;
+                color: white;
+                background-color: #404040;
+            }
+            h1 {
+                line-height: 300px;
+            }
+            .div1 {
+                padding: 50px;
+            }
+            a {
+                color: gray;
+            }
+            .empty {
+                height: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="div0">
+            <h1>WORDCOUNT</h1>
+        </div>
+
+        <div class="div1">
+            <h3>당신이 입력한 텍스트는 {{total}}로 구성되어 있습니다.</h3>
+            <a href="{%url 'home'%}">Again</a>
+        </div>
+
+        <div class="div1">
+            <h3>입력한 텍스트 : </h3>
+            <p>{{full}}</p>
+        </div>
+
+        <div class="div1">
+            <h3>단어 카운트 : </h3>
+            <p>{% for word, howmany in dictionary%}
+            {{word}} : {{howmany}}
+            <br>
+            {%endfor%}
+            </p>
+        </div>
+
+        <div class="empty"></div>
+    </body>
+</html>
